@@ -1,0 +1,37 @@
+body{
+    background-color: beige;
+}
+
+.noche{
+    background-color: #454d55;
+    color: white;
+}
+.noche .card{
+    color: white;
+    background-color: #32373D;
+}
+
+.noche .card button:hover{
+    color: #32373D;
+    background-color: white;
+}
+
+.free .card button{
+    background-color: #2DAAE0;
+    border: #2DAAE0;
+}
+
+.free .card button:hover{
+    background-color: #2D39E0;
+    color: black;
+}
+
+.free{
+    background-color: #2D39E0;
+    color: white;
+}
+
+.free .card{
+    background-color: #2D72E0;
+    color: white;
+}

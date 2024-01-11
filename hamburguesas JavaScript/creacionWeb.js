@@ -37,7 +37,7 @@ row.appendChild(col);
 
 //-------------------------------------segundo select-------------------------------------------------
 col = factory.crear("div", ["class"],["col-md-6"]);
-select = factory.crear("select",["class", "id"], ["form-select", "selectIdioma"]);
+select = factory.crear("select",["class", "id"], ["form-select", "modo"]);
 optionsStilos.forEach(elemento => {
     const option = factory.crear("option", ["value","inner"], [elemento, elemento]);
     select.appendChild(option);

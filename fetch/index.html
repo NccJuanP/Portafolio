@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<!--form actualizar-->
+    
+<div class="modal fade" id="exampleModalform" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="col-form-label">Name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="col-form-label">Email</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="editar()">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<!--form crear-->
+    
+<div class="modal fade" id="modalnuevo" tabindex="-1" aria-labelledby="modalnuevo" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="col-form-label">Name</label>
+            <input type="text" class="form-control" id="namecreado">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="col-form-label">Email</label>
+            <input type="email" class="form-control" id="emailcreado">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="col-form-label">Password</label>
+            <input type="password" class="form-control" id="passwordcreado">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="crear()">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalnuevo">registrar nuevo usuario</button>
+
+<!---table-->
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr  id="plantilla">
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td id="acciones">
+                <a href="#" id="editar" onclick="tieneID((this.parentNode).parentNode)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalform">editar</a>
+                <a href="#" name="eliminar" onclick="eliminar((this.parentNode).parentNode)" class="btn btn-danger">eliminar</a>
+                <a href="#" name="detalles" onclick="detalles((this.parentNode).parentNode)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">detalles</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+</body>
+</html>
