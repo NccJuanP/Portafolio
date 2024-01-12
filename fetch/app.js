@@ -1,6 +1,7 @@
 //rellenar formulario
 
 let informacion = ["element.id","element.name","element.email"]
+let names = ["id", "name", "email"]
 let idTrabajo;
 let nameTrabajo;
 let emailtrabajo;
@@ -21,6 +22,7 @@ fetch('https://memin.io/public/api/users')
                     const plantilla = document.querySelector("#plantilla");
                     const lista = plantilla.cloneNode(true)
                     lista.children[i].innerHTML = eval(informacion[i]);
+                    lista.children[i].setAttribute("name", names[i]);
                     tr.appendChild(lista.children[i])
                 }
                 tr.id = element.id
@@ -124,4 +126,21 @@ function eliminar(otro){
     const padre = document.getElementById("tbody")
     padre.removeChild(otro);
 })
+}
+
+function buscar(){
+    let buscado = document.getElementById("barraBusqueda").value;
+    buscado = buscado.toLowerCase();
+    let registrosName = document.getElementsByName("name");
+    let registroEmail = document.getElementsByName("email");
+
+    for (let i = 0; i < registrosName.length; i++){
+        if(!((registrosName[i].textContent).toLowerCase()).includes(buscado) && !((registroEmail[i].textContent).toLowerCase()).includes(buscado)){
+            (registrosName[i].parentElement).style.display = "none";
+        }
+        
+        else{
+            (registrosName[i].parentElement).style.display = "";
+        }
+    }
 }
