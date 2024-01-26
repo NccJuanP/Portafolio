@@ -9,12 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<!--form actualizar-->
-
-<!-- input tag -->
-<input id="barraBusqueda" onkeyup="buscar()" type="text"
-name="search" placeholder="buscar..">
-
+  
+  <!-- input tag -->
+  <input id="barraBusqueda" onkeyup="buscar()" type="text"
+  name="search" placeholder="buscar..">
+  
+  <!--form actualizar-->
     
 <div class="modal fade" id="exampleModalform" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -80,17 +80,17 @@ name="search" placeholder="buscar..">
 
   
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel">detalles</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="reset()"></button>
       </div>
       <div class="modal-body" id="modal-body">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="reset()">Close</button>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@ name="search" placeholder="buscar..">
             <td id="acciones">
                 <a href="#" id="editar" onclick="tieneID((this.parentNode).parentNode)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalform">editar</a>
                 <a href="#" name="eliminar" onclick="eliminar((this.parentNode).parentNode)" class="btn btn-danger">eliminar</a>
-                <a href="#" name="detalles" onclick="detalles((this.parentNode).parentNode)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">detalles</a>
+                <a href="#" name="detalles" onclick="detalles((this.parentElement).parentElement)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">detalles</a>
             </td>
           </tr>
         </tbody>

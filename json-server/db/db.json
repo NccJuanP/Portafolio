@@ -1,0 +1,34 @@
+{
+  "employeds": [
+    {
+      "name": "Juan Pablo",
+      "last_name": "Londoño Calle",
+      "email": "juanpablolc414@gmail.com",
+      "puesto": "Desarrollador de software",
+      "entry_date": "2023-10-02",
+      "cv": "www.link.com",
+      "status": "activo",
+      "website": "www.wikipedia.com",
+      "company": "Riwi",
+      "id": "66f7"
+    }
+  ],
+  "empresas": [
+    {
+      "name_of_company": "colanta",
+      "description": "leche",
+      "fundator": "vacalola",
+      "logo": "leche",
+      "website": "www",
+      "id": "86e6"
+    },
+    {
+      "id": "8383",
+      "name_of_company": "riwi",
+      "description": "compañia de software",
+      "fundator": "thomas",
+      "logo": "uno muy bonito",
+      "website": "www.riwi.com"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ let nameTrabajo;
 let emailtrabajo;
 const inputName = document.getElementById("name");
 const inputEmail = document.getElementById("email");
-
+//crear tabla
 fetch('https://memin.io/public/api/users')
 .then(response => {
     return response.json();
@@ -32,6 +32,7 @@ fetch('https://memin.io/public/api/users')
             tbody.removeChild(tbody.children[0]) 
         })
 
+// funcion para crear nuevo usuario
 function crear(){
     const nuevoNombre = document.getElementById("namecreado").value;
     const nuevoEmail = document.getElementById("emailcreado").value;
@@ -61,6 +62,7 @@ function crear(){
         })
     }
 
+//funcion controladora para manejar modal editar
 function tieneID(otro){
     idTrabajo = otro.id
     nameTrabajo = otro.children[1].innerText;
@@ -69,6 +71,8 @@ function tieneID(otro){
     inputName.value = nameTrabajo;
 }
 
+
+//funcion editar que corresponde al modal
 function editar(){
     const nuevoNombre = inputName.value;
     const nuevoEmail = inputEmail.value;
@@ -103,31 +107,37 @@ function editar(){
 
 }
 
-
+//funcion detalles
 function detalles(otro){
     const modalcontent = document.getElementById("modal-body");
     fetch('https://memin.io/public/api/users/'+otro.id)
 .then(response => {
     return response.json();
 })
-.then(data=>{
-    for (let key in data) {
+.then((data)=>{
+    for (let key in (data)) {
             modalcontent.innerText += key + " : " + (data)[key] + "\n";
     }
-    console.log(data)
 })
 }
 
+function reset(){
+    const modalcontent = document.getElementById("modal-body");
+    modalcontent.innerText = "";
+}
 
+//funcion eliminar
 function eliminar(otro){
     const modalcontent = document.getElementById("modal-body");
     fetch('https://memin.io/public/api/users/'+otro.id, { method: "DELETE"})
 .then(() => {
     const padre = document.getElementById("tbody")
     padre.removeChild(otro);
+    alert("Se elimino con exito")
 })
 }
 
+//barra de busqueda
 function buscar(){
     let buscado = document.getElementById("barraBusqueda").value;
     buscado = buscado.toLowerCase();
